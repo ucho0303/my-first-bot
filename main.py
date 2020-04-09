@@ -45,7 +45,7 @@ def handle_message(event):
     replace = receive.replace("な", "にゃ")
     search = [
         "https://www.google.com/search?client=ubuntu&channel=fs&q=",
-        "search&ie=utf-8&oe=utf-8",
+        "&ie=utf-8&oe=utf-8",
     ]
     # sentenceender = [
     #     "ざます", "ですわ", "だよ！",
