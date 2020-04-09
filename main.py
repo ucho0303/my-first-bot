@@ -42,14 +42,15 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     receive = event.message.text
-    sentenceender = [
-        "ざます", "ですわ", "だよ！",
-        "ですの", "にゃー", "、です",
-        "かな？", "だぜ！", 
-        ]
+    replace = receive.replace("な", "にゃ")
+    # sentenceender = [
+    #     "ざます", "ですわ", "だよ！",
+    #     "ですの", "にゃー", "、です",
+    #     "かな？", "だぜ！", 
+    #     ]
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=receive + random.choice(sentenceender)))
+        TextSendMessage(text=replace))
 
 
 if __name__ == "__main__":
