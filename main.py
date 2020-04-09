@@ -43,10 +43,7 @@ def callback():
 def handle_message(event):
     receive = event.message.text
     replace = receive.replace("な", "にゃ")
-    search = [
-        "https://www.google.com/search?client=ubuntu&channel=fs&q=",
-        "&ie=utf-8&oe=utf-8",
-    ]
+    search ="https://www.google.com/search?q="
     # sentenceender = [
     #     "ざます", "ですわ", "だよ！",
     #     "ですの", "にゃー", "、です",
@@ -54,7 +51,7 @@ def handle_message(event):
     #     ]
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=search[0] + receive + search[1]))
+        TextSendMessage(text=replace))
 
 
 if __name__ == "__main__":
