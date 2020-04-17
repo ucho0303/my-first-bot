@@ -44,14 +44,14 @@ def handle_message(event):
     receive = event.message.text
     replace = receive.replace("な", "にゃ")
     search ="https://www.google.com/search?q="
-    # sentenceender = [
-    #     "ざます", "ですわ", "だよ！",
-    #     "ですの", "にゃー", "、です",
-    #     "かな？", "だぜ！", 
-    #     ]
+    sentenceender = [
+        "ざます", "ですわ", "だよ！",
+        "ですの", "にゃー", "、です",
+        "かな？", "だぜ！", 
+        ]
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=replace))
+        TextSendMessage(text=replace + sentenceender[4]))
 
 
 if __name__ == "__main__":
