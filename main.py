@@ -42,11 +42,11 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     receive = event.message.text
-    replaced = receive.replace("な", "にゃ")
-    sentenceender = "にゃー"
+    replaced = receive.replace("な", "にゃ").replace("ナ","ニャ")
     line_bot_api.reply_message(
         event.reply_token,
-        TextSendMessage(text=replaced + sentenceender))
+        TextSendMessage(text=replaced)
+        )
 
 
 if __name__ == "__main__":
